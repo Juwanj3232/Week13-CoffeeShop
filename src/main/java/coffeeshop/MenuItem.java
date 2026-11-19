@@ -12,6 +12,31 @@ package coffeeshop;
 
 public class MenuItem {
 
-    // YOUR CODE
+    private String name;
+    private double price;
+
+    public MenuItem(String name, double price){
+        this.name = name;
+        this.price = price;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public double getPrice(){
+        return price;
+    }
+
+    public boolean isDrink(){
+        return false;
+    }
+
+    public String toString(){
+        // %s inserts the name that getNmae returns and %.2f returns the price with 2 decimals
+        return String.format("%s - $%.2f", getName(),getPrice());
+    }
+
+
 
 }
