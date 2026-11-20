@@ -15,34 +15,44 @@ package coffeeshop;
 // Commit message (after Food is green too):  step 2: Drink and Food
 
 public class Drink extends MenuItem {
-
+    public static final double MEDIUM_UPCHARGE = 0.50;
+    public static final double LARGE_UPCHARGE = 1.00;
     private char size;
 
     public Drink(String name, double price, char size){
-        this.size = size;
+        super(name, price);
+        char upperCaseSize = Character.toUpperCase(size);
+        if (upperCaseSize == 'M' || upperCaseSize == 'L'){
+            this.size = upperCaseSize;
+        }
+        else{
+            this.size = 'S';
+
+        }
     }
 
-    public static final double MEDIUM_UPCHARGE(){
-
-    }
-
-    public static final double LARGE_UPCHARGE(){
-
-    }
 
     public char getSize(){
-        return
+        return size;
     }
 
     public double getPrice(){
-        return
+        if (size == 'M'){
+            return super.getPrice() + MEDIUM_UPCHARGE;
+        }
+        else if (size == 'L'){
+            return super.getPrice() + LARGE_UPCHARGE;
+        }
+            return super.getPrice();
+
+
     }
 
     public boolean isDrink(){
-        return
+        return true;
     }
     public String toString(){
-        return
+        return String.format("%s (%c) - $%.2f",getName(),size, getPrice());
     }
 
 

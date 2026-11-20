@@ -33,7 +33,7 @@ public class MenuItem {
     }
 
     public String toString(){
-        // %s inserts the name that getNmae returns and %.2f returns the price with 2 decimals
+        // %s inserts the name that getName returns and %.2f returns the price with 2 decimals
         return String.format("%s - $%.2f", getName(),getPrice());
     }
 
