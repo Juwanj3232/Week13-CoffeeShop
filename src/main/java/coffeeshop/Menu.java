@@ -14,6 +14,43 @@ import java.util.ArrayList;
 
 public class Menu {
 
-    // YOUR CODE
+    private ArrayList<MenuItem> items;
+
+    public Menu(){
+        items = new ArrayList<>();
+        items.add(new Drink("Coffee", 2.00, 'S'));
+        items.add(new Drink("Latte", 3.25, 'S'));
+        items.add(new Drink("Cappuccino", 3.25, 'S'));
+        items.add(new Drink("Hot Chocolate", 2.50, 'S'));
+        items.add(new Drink("Iced Tea", 2.25, 'S'));
+        items.add(new Food("Bagel", 2.75, false));
+        items.add(new Food("Blueberry Muffin", 2.50, false));
+        items.add(new Food("Breakfast Sandwich", 4.50, false));
+
+
+    }
+
+    public int size(){
+        return items.size();
+    }
+
+    public MenuItem getItem(int number){
+        if (number < 1 || number > items.size()){
+            return null;
+        }
+
+        return items.get(number - 1);
+    }
+
+    public String toString(){
+        String result = "";
+        for (int i = 0; i < items.size(); i++){
+            int number = i + 1;
+            MenuItem item = items.get(i);
+            result += number + ". " + item + "\n";
+        }
+        return result;
+    }
 
 }
+
