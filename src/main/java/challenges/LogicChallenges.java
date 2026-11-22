@@ -12,7 +12,21 @@ public class LogicChallenges {
     //   anything else -> -1.0 (that size does not exist)
     //   sizeUpcharge('M') -> 0.5     sizeUpcharge('l') -> 1.0     sizeUpcharge('X') -> -1.0
     public static double sizeUpcharge(char size) {
-        return 0.0;   // YOUR CODE
+        char upper = Character.toUpperCase(size);
+
+        if (upper == 'S') {
+            return 0.0;
+        }
+
+        else if (upper == 'M') {
+            return 0.50;
+        }
+
+        else if (upper == 'L') {
+            return 1.00;
+        }
+
+        return -1.0;
     }
 
     // Happy hour on a weekday is from hour 14 to hour 16 (2 PM to 4 PM), both included.
@@ -21,7 +35,10 @@ public class LogicChallenges {
     //   isHappyHour(15, false) -> true     isHappyHour(12, false) -> false
     //   isHappyHour(12, true)  -> true     isHappyHour(25, true)  -> false
     public static boolean isHappyHour(int hour, boolean weekend) {
-        return false;   // YOUR CODE
+        if (weekend) {
+            return hour >= 12 && hour <= 17;
+        }
+        return hour >= 14 && hour <= 16;
     }
 
     // A loyalty card gets one stamp per drink. Every 10 stamps is one free drink.
@@ -31,7 +48,10 @@ public class LogicChallenges {
     //   freeDrinks(8, 3)  -> 1     freeDrinks(0, 25) -> 2
     //   freeDrinks(4, 5)  -> 0     freeDrinks(-1, 30) -> 0
     public static int freeDrinks(int stamps, int bought) {
-        return 0;   // YOUR CODE
+        if (stamps < 0 || bought < 0) {
+            return 0;
+        }
+        return (stamps + bought) / 10;
     }
 
     // The fewest coins that make the change. Coins are 25, 10, 5 and 1 cents.
@@ -41,6 +61,26 @@ public class LogicChallenges {
     //   coinsForChange(41) -> 4  (25 + 10 + 5 + 1)
     //   coinsForChange(99) -> 9  (3 quarters, 2 dimes, 4 pennies)
     public static int coinsForChange(int cents) {
-        return 0;   // YOUR CODE
+        if (cents <= 0) {
+            return 0;
+        }
+        int coins = 0;
+
+        // how many quarters fit
+        coins += cents / 25;
+        // what is left after the quarters
+        cents = cents % 25;
+
+        // dimes
+        coins += cents / 10;
+        cents = cents % 10;
+
+        // nickels
+        coins += cents / 5;
+        cents = cents % 5;
+
+        // the rest are pennies
+        coins += cents;
+        return coins;
     }
 }
