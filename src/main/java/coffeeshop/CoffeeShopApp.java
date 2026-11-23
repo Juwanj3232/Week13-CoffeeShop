@@ -69,13 +69,19 @@ public class CoffeeShopApp {
 
     // Prints the coffee cup art once, when the game starts.
     private void printBanner() {
-        System.out.println("      ( (");
-        System.out.println("       ) )");
-        System.out.println("    ........");
-        System.out.println("    |      |]");
-        System.out.println("    \\      /");
-        System.out.println("     `----'");
-        System.out.println("  HORNET COFFEE");
+        System.out.println("              (   (   (");
+        System.out.println("               )   )   )");
+        System.out.println("              (   (   (");
+        System.out.println("          _________________");
+        System.out.println("         |/////////////////|__");
+        System.out.println("         |=================|  \\");
+        System.out.println("         |/////////////////|   |");
+        System.out.println("         |=================|__/");
+        System.out.println("         |/////////////////|");
+        System.out.println("          \\_______________/");
+        System.out.println("       ~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("            HORNET COFFEE");
+        System.out.println("        Brewed with a sting.");
     }
 
     // Prints the main menu screen, with the order number and item count.

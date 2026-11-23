@@ -97,7 +97,7 @@ public class Order {
         return afterDiscount + tip;
     }
 
-    // Gives back the order as text: the number, each item, the subtotal, and the discount if there is one.
+    // Gives back the order as text: the number, each item, the subtotal, and the discount if it's one.
     public String toString(){
         String result = "Order #" + orderNumber + "\n";
         for (int i = 0; i < items.size(); i++){

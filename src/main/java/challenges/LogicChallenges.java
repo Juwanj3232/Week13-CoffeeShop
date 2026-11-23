@@ -42,9 +42,13 @@ public class LogicChallenges {
     }
 
     // A loyalty card gets one stamp per drink. Every 10 stamps is one free drink.
+
     // The card already has stamps, and the customer buys more drinks.
+
     // Give back how many free drinks they have earned in total.
+
     // If stamps or bought is below 0, give back 0.
+
     //   freeDrinks(8, 3)  -> 1     freeDrinks(0, 25) -> 2
     //   freeDrinks(4, 5)  -> 0     freeDrinks(-1, 30) -> 0
     public static int freeDrinks(int stamps, int bought) {
@@ -55,8 +59,11 @@ public class LogicChallenges {
     }
 
     // The fewest coins that make the change. Coins are 25, 10, 5 and 1 cents.
+
     // Use as many quarters as you can, then dimes, then nickels, then pennies.
+
     // If cents is 0 or less, give back 0.
+
     //   coinsForChange(30) -> 2  (25 + 5)
     //   coinsForChange(41) -> 4  (25 + 10 + 5 + 1)
     //   coinsForChange(99) -> 9  (3 quarters, 2 dimes, 4 pennies)

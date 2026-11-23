@@ -7,9 +7,12 @@ package challenges;
 
 public class StringChallenges {
 
-    // A short code the barista prints on the cup: the first 3 letters of the drink in
+    // A short code the barista prints on the cup which are the first 3 letters of the drink 
+
     // CAPITALS, a dash, then the size letter in CAPITALS.
+
     // If the name is shorter than 3 letters, use the whole name.
+
     //   orderCode("latte", 'm') -> "LAT-M"
     //   orderCode("Tea", 'L')   -> "TEA-L"
     //   orderCode("Mo", 's')    -> "MO-S"
@@ -22,7 +25,9 @@ public class StringChallenges {
     }
 
     // Write a customer's name on the cup neatly: no spaces at the ends, the first letter
+
     // a capital, every other letter small. If there is no name left, give back "Guest".
+
     //   cupName("jORDAN")   -> "Jordan"
     //   cupName("  sky  ")  -> "Sky"
     //   cupName("   ")      -> "Guest"
@@ -37,8 +42,11 @@ public class StringChallenges {
     }
 
     // How many times does word show up in order? Capital and small letters count the same.
+
     // After you find the word, keep looking right after it.
+
     // If word is empty, give back 0.
+
     //   countWord("double shot, extra SHOT", "shot") -> 2
     //   countWord("oat milk latte", "milk")          -> 1
     //   countWord("black coffee", "sugar")           -> 0
@@ -59,8 +67,11 @@ public class StringChallenges {
     }
 
     // One line of a receipt. The name, then dots until the line is 20 characters long,
+
     // then a dollar sign and the price with 2 decimals.
+
     // If the name is already 20 characters or longer, add no dots.
+
     //   receiptLine("Latte", 3.75) -> "Latte...............$3.75"   (5 letters + 15 dots = 20)
     //   receiptLine("Bagel", 2.5)  -> "Bagel...............$2.50"
     public static String receiptLine(String name, double price) {
