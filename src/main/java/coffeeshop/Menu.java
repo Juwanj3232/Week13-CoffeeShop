@@ -16,6 +16,7 @@ public class Menu {
 
     private ArrayList<MenuItem> items;
 
+    // Makes the menu and adds the 8 items the shop sells.
     public Menu(){
         items = new ArrayList<>();
         items.add(new Drink("Coffee", 2.00, 'S'));
@@ -30,10 +31,12 @@ public class Menu {
 
     }
 
+    // Gives back how many items are on the menu.
     public int size(){
         return items.size();
     }
 
+    // Gives back the item with this number (starting at 1), or null if there is none.
     public MenuItem getItem(int number){
         if (number < 1 || number > items.size()){
             return null;
@@ -42,6 +45,7 @@ public class Menu {
         return items.get(number - 1);
     }
 
+    // Gives back the whole menu as text, one numbered item per line.
     public String toString(){
         String result = "";
         for (int i = 0; i < items.size(); i++){

@@ -19,6 +19,7 @@ public class Drink extends MenuItem {
     public static final double LARGE_UPCHARGE = 1.00;
     private char size;
 
+    // Makes a drink. The size is saved as S, M or L, and anything else becomes S.
     public Drink(String name, double price, char size){
         super(name, price);
         char upperCaseSize = Character.toUpperCase(size);
@@ -32,10 +33,12 @@ public class Drink extends MenuItem {
     }
 
 
+    // Gives back the size letter of the drink.
     public char getSize(){
         return size;
     }
 
+    // Gives back the price with the size upcharge added.
     public double getPrice(){
         if (size == 'M'){
             return super.getPrice() + MEDIUM_UPCHARGE;
@@ -48,9 +51,11 @@ public class Drink extends MenuItem {
 
     }
 
+    // Gives back true, because this is a drink.
     public boolean isDrink(){
         return true;
     }
+    // Gives back the drink as text, like "Latte (M) - $3.75".
     public String toString(){
         return String.format("%s (%c) - $%.2f",getName(),size, getPrice());
     }

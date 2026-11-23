@@ -15,23 +15,28 @@ public class MenuItem {
     private String name;
     private double price;
 
+    // Makes a menu item with a name and a price.
     public MenuItem(String name, double price){
         this.name = name;
         this.price = price;
     }
 
+    // Gives back the name of the item.
     public String getName(){
         return name;
     }
 
+    // Gives back the price of the item.
     public double getPrice(){
         return price;
     }
 
+    // Gives back false, because a plain menu item is not a drink.
     public boolean isDrink(){
         return false;
     }
 
+    // Gives back the item as text, like "Bagel - $2.75".
     public String toString(){
         // %s inserts the name that getName returns and %.2f returns the price with 2 decimals
         return String.format("%s - $%.2f", getName(),getPrice());

@@ -26,6 +26,7 @@ public class Order {
     private ArrayList<MenuItem> items;
     private int discountPercent;
 
+    // Makes a new empty order and gives it the next order number.
     public Order(){
         this.orderNumber = nextOrderNumber;
         nextOrderNumber += 1;
@@ -33,14 +34,17 @@ public class Order {
         discountPercent = 0;
     }
 
+    // Gives back this order's number.
     public int getOrderNumber(){
         return orderNumber;
     }
 
+    // Adds an item to the order.
     public void addItem(MenuItem item){
         items.add(item);
     }
 
+    // Removes the item with this number (starting at 1). Gives back false if there is no such item.
     public boolean removeItem(int number){
         if (number < 1 || number > items.size()){
             return false;
@@ -49,14 +53,17 @@ public class Order {
         return true;
     }
 
+    // Gives back how many items are in the order.
     public int getItemCount(){
         return items.size();
     }
 
+    // Gives back true if the order has no items.
     public boolean isEmpty(){
         return items.isEmpty();
     }
 
+    // Adds up the price of every item in the order.
     public double getSubtotal(){
         double subtotal = 0;
         for (MenuItem item : items){
@@ -65,6 +72,7 @@ public class Order {
         return subtotal;
     }
 
+    // Gives the coupon discount if the code is right. Gives back true if it worked.
     public boolean applyCoupon(String code){
         // trims both sides of the code of spaces and checks if it equals the coupon
         if (code.trim().equalsIgnoreCase(COUPON_CODE)){
@@ -74,10 +82,12 @@ public class Order {
         return false;
     }
 
+    // Gives back how much money the coupon takes off.
     public double getDiscount(){
         return getSubtotal() * discountPercent / 100.0;
     }
 
+    // Takes off the discount, then adds the tip on what is left. A negative tip counts as 0.
     public double getTotal(int tipPercent){
         if (tipPercent < 0){
             tipPercent = 0;
@@ -87,6 +97,7 @@ public class Order {
         return afterDiscount + tip;
     }
 
+    // Gives back the order as text: the number, each item, the subtotal, and the discount if there is one.
     public String toString(){
         String result = "Order #" + orderNumber + "\n";
         for (int i = 0; i < items.size(); i++){

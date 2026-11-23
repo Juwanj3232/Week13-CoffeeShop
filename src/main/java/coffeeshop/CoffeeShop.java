@@ -20,6 +20,7 @@ public class CoffeeShop {
     private ArrayList<Order> completedOrders;
     private double totalSales;
 
+    // Makes the shop with its name, a menu, no orders yet, and $0 in sales.
     public CoffeeShop(String name){
         this.name = name;
         menu = new Menu();
@@ -27,14 +28,17 @@ public class CoffeeShop {
         totalSales = 0;
     }
 
+    // Gives back the name of the shop.
     public String getName(){
         return name;
     }
 
+    // Gives back the shop's menu.
     public Menu getMenu(){
         return menu;
     }
 
+    // Finishes an order: saves it, adds its total to the sales, and gives back the total. An empty order gives back 0.
     public double checkout(Order order, int tipPercent){
         if (order.isEmpty()){
             return 0;
@@ -45,14 +49,17 @@ public class CoffeeShop {
         return total;
     }
 
+    // Gives back how many orders have been checked out today.
     public int getOrdersCompleted(){
         return completedOrders.size();
     }
 
+    // Gives back all the money taken in today.
     public double getTotalSales(){
         return totalSales;
     }
 
+    // Adds up how many items were sold in all the finished orders.
     public int getItemsSold(){
         int count = 0;
         for (Order order : completedOrders){
@@ -61,6 +68,7 @@ public class CoffeeShop {
         return count;
     }
 
+    // Gives back today's sales report: orders, items sold, and the total.
     public String salesReport(){
         String result = name + " - today's sales\n";
         result += "  Orders: " + getOrdersCompleted() + "\n";

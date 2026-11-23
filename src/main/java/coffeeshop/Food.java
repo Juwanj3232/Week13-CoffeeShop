@@ -19,15 +19,18 @@ public class Food extends MenuItem {
     private boolean heated = true;
 
 
+    // Makes a food item that is heated or not.
     public Food(String name, double price, boolean heated) {
         super(name, price);
         this.heated = heated;
     }
 
+    // Gives back true if the food is heated.
     public boolean isHeated() {
         return heated;
     }
 
+    // Gives back the price, plus the heat fee if the food is heated.
     public double getPrice() {
         if (heated) {
             return super.getPrice() + HEAT_FEE;
@@ -36,6 +39,7 @@ public class Food extends MenuItem {
 
     }
 
+    // Gives back the food as text, and says "heated" if it is.
     public String toString() {
         if (heated) {
             return String.format("%s, heated - $%.2f", getName(), getPrice());

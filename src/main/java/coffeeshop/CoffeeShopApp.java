@@ -21,6 +21,7 @@ public class CoffeeShopApp {
     private CoffeeShop shop;
     private Order order;
 
+    // Sets up the game with the keyboard reader, the shop, and the first order.
     public CoffeeShopApp(Scanner input) {
         this.input = input;
         shop = new CoffeeShop("Hornet Coffee");
